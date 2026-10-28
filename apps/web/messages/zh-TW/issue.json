@@ -247,6 +247,8 @@
     "toSend": "傳送",
     "unknownAuthor": "未知使用者",
     "goToLastComment": "跳轉到最新留言",
+    "copyLink": "複製連結",
+    "linkCopied": "連結已複製",
     "edit": "編輯",
     "edited": "已編輯",
     "deleteComment": "刪除留言",

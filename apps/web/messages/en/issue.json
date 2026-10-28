@@ -247,6 +247,8 @@
     "toSend": "to send",
     "unknownAuthor": "Unknown",
     "goToLastComment": "Go to the last comment",
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied",
     "edit": "Edit",
     "edited": "edited",
     "deleteComment": "Delete comment",

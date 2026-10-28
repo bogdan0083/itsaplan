@@ -247,6 +247,8 @@
     "toSend": "للإرسال",
     "unknownAuthor": "غير معروف",
     "goToLastComment": "الانتقال إلى آخر تعليق",
+    "copyLink": "نسخ الرابط",
+    "linkCopied": "تم نسخ الرابط",
     "edit": "تعديل",
     "edited": "تم التعديل",
     "deleteComment": "حذف التعليق",

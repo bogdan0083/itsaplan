@@ -16,6 +16,7 @@ async function setupOwnerProject() {
     owner,
     asOwner,
     projectId: project.data!.id,
+    teamRef: project.data!.teamRef,
     columnId: view.data!.columns[0].id,
     columns: view.data!.columns,
   };
@@ -485,19 +486,24 @@ describe('webhooks', () => {
     });
 
     it('names the issue a comment is on', async () => {
-      const { asOwner, columnId } = await setupOwnerProject();
+      const { asOwner, columnId, teamRef } = await setupOwnerProject();
       const id = await createWebhook(asOwner, ['comment.created']);
       const issue = (
         await asOwner.projects({ projectKey: 'MKT' }).issues.post({ columnId, title: 'Task' })
       ).data!;
 
-      await asOwner.issues({ issueId: issue.id }).comments.post({ body: 'looks good' });
+      const comment = (
+        await asOwner.issues({ issueId: issue.id }).comments.post({ body: 'looks good' })
+      ).data!;
 
       const [payload] = await payloads(asOwner, id);
+      const issueLink = `${process.env.APP_URL}/${teamRef}/issue/${issue.identifier}`;
+      expect(payload.data.url).toBe(`${issueLink}#comment-${comment.id}`);
       expect(payload.data.issue).toMatchObject({
         id: issue.id,
         identifier: issue.identifier,
         title: 'Task',
+        url: issueLink,
       });
     });
   });

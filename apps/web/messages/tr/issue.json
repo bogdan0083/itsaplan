@@ -247,6 +247,8 @@
     "toSend": "göndermek için",
     "unknownAuthor": "Bilinmeyen",
     "goToLastComment": "Son yoruma git",
+    "copyLink": "Bağlantıyı kopyala",
+    "linkCopied": "Bağlantı kopyalandı",
     "edit": "Düzenle",
     "edited": "düzenlendi",
     "deleteComment": "Yorumu sil",

@@ -77,6 +77,9 @@ export const issuePath = (ref: string, sequenceNumber: number) => {
   return `/${encodeURIComponent(teamRef)}/issue/${encodeURIComponent(key)}-${sequenceNumber}`;
 };
 
+export const commentPath = (ref: string, sequenceNumber: number, commentId: number) =>
+  `${issuePath(ref, sequenceNumber)}#comment-${commentId}`;
+
 // "MKT-42" -> { key: 'MKT', sequenceNumber: 42 }, or null for anything else.
 export function parseIssueIdentifier(
   identifier: string,
